@@ -22,6 +22,15 @@ require("lazy").setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' }
 },
 {
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = require("config.plugins.nvimtree"),
+},
+{
   'nvim-telescope/telescope.nvim',
   dependencies = { 'nvim-lua/plenary.nvim' }
 },  -- lazy
