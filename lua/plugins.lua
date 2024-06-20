@@ -88,3 +88,4 @@ require("lazy").setup({
 require("config/plugins/lualine")
 require("config/plugins/treesitter")
 require("config.plugins.mason")
+require("config.plugins.lspconfig")
