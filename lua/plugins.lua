@@ -21,7 +21,10 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
 },
-  -- lazy
+{
+  'nvim-telescope/telescope.nvim',
+  dependencies = { 'nvim-lua/plenary.nvim' }
+},  -- lazy
 {
     "askfiy/visual_studio_code",
     priority = 100,
