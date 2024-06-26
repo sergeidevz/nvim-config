@@ -1,15 +1,7 @@
 local lspconfig = require('lspconfig')
-
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
-    ['rust-analyzer'] = {},
-  },
-}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lspconfig.tsserver.setup{
-  filetypes = {
-    "javascript",
-    "typescript",
-  },
+  filetypes = { "javascript", "javascriptreact",  "typescript", "typescriptreact" },
+  capabilities = capabilities
 }
