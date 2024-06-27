@@ -35,6 +35,7 @@ require("lazy").setup({
     auto_install = true,
   },
 },
+{ 'mhartington/formatter.nvim' },
 {
     "neovim/nvim-lspconfig",
     lazy = false,

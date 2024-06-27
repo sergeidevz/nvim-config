@@ -10,3 +10,9 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { nor
 
 -- Nvim tree mappings 
 vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('i', '{', '{}<ESC>ha', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '[', '[]<ESC>ha', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '(', '()<ESC>ha', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '"', '""<ESC>ha', {noremap = true, silent = true})
+

@@ -1,4 +1,7 @@
-vim.o.number = true
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
-vim.o.relativenumber = true
+local opt = vim.opt
+opt.number = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.relativenumber = true
+opt.ignorecase = true
+opt.smartcase = true
