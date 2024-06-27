@@ -5,3 +5,6 @@ opt.tabstop = 2
 opt.relativenumber = true
 opt.ignorecase = true
 opt.smartcase = true
+opt.termguicolors = true
+opt.cursorline = true
+opt.clipboard:append("unnamedplus")
