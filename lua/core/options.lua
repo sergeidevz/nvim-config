@@ -9,3 +9,5 @@ opt.termguicolors = true
 opt.cursorline = true
 opt.clipboard:append("unnamedplus")
 opt.swapfile = false
+opt.timeoutlen = 300
+opt.ttimeoutlen = 10
