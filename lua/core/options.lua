@@ -11,3 +11,8 @@ opt.clipboard:append("unnamedplus")
 opt.swapfile = false
 opt.timeoutlen = 300
 opt.ttimeoutlen = 10
+
+
+vim.diagnostic.config({
+	virtual_text = false, -- Disable inline diagnostics
+})

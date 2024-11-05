@@ -16,6 +16,7 @@ return {
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
+
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
 

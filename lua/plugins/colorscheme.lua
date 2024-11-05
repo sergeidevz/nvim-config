@@ -1,9 +1,21 @@
+local K = {
+	"askfiy/visual_studio_code",
+	priority = 100,
+	config = function()
+		vim.cmd("colorscheme visual_studio_code")
+	end,
+}
+
 local M = {
-    "askfiy/visual_studio_code",
-    priority = 100,
-    config = function()
-        vim.cmd("colorscheme visual_studio_code")
-    end,
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {
+
+	},
+	config = function()
+		vim.cmd [[colorscheme tokyonight]]
+	end
 }
 
 
