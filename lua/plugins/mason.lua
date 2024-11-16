@@ -31,8 +31,6 @@ return {
 				"lua_ls",
 				"graphql",
 				"pyright",
-				"csharpier",
-				"netcoredbg"
 			},
 		})
 	end,
