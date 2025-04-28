@@ -11,6 +11,7 @@ opt.clipboard:append("unnamedplus")
 opt.swapfile = false
 opt.timeoutlen = 300
 opt.ttimeoutlen = 10
+opt.showmode = false
 
 
 vim.diagnostic.config({

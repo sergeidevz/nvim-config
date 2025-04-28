@@ -10,7 +10,7 @@ return {
 
 		nvimtree.setup({
 			view = {
-				width = 35,
+				width = 25,
 				relativenumber = false,
 			},
 			renderer = {
@@ -56,9 +56,9 @@ return {
 				},
 			},
 			diagnostics = {
-				enable = true,
+				enable = false,
 				show_on_dirs = false,
-				show_on_open_dirs = true,
+				show_on_open_dirs = false,
 				debounce_delay = 50,
 				severity = {
 					min = vim.diagnostic.severity.WARNING,
@@ -78,18 +78,5 @@ return {
 				ignore = false,
 			},
 		})
-
-		-- set keymaps
-		local keymap = vim.keymap -- for conciseness
-
-		keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
-		keymap.set(
-			"n",
-			"<leader>ef",
-			"<cmd>NvimTreeFindFileToggle<CR>",
-			{ desc = "Toggle file explorer on current file" }
-		) -- toggle file explorer on current file
-		keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
-		keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
 	end,
 }

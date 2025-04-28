@@ -4,13 +4,13 @@ local km = vim.keymap
 
 -- Telescope key mappings
 km.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true, desc = "Find files" })
-km.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true, desc = "Live grep" })
+km.set('n', '<leader>fw', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true, desc = "Live grep" })
 km.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true, desc = "Buffers" })
 km.set('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true, desc = "Tags" })
 
 
 -- Nvim tree mappings 
-km.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', {noremap = true, silent = true, desc = "Toggle file tree"})
+km.set('n', '<leader>e', '<cmd>NvimTreeFindFileToggle<CR>', {noremap = true, silent = true, desc = "Toggle file tree"})
 
 
 -- Doubles
