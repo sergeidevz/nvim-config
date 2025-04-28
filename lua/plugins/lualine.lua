@@ -55,16 +55,19 @@ return {
 				theme = my_lualine_theme,
 			},
 			sections = {
+				lualine_a = {"mode"},
+				lualine_b = {"diagnostics"},
+				lualine_c = {},
 				lualine_x = {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
-					{ "encoding" },
-					{ "fileformat" },
-					{ "filetype" },
+					{ "filename" },
 				},
+				lualine_y = {},
+				lualine_z = {},
 			},
 		})
 	end,

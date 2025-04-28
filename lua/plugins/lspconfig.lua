@@ -92,6 +92,9 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["angularls"] = function()
+        lspconfig["angularls"].setup{}
+			end,
 			["omnisharp"] = function()
 				-- configure svelte server
 				lspconfig["omnisharp"].setup({
@@ -112,35 +115,6 @@ return {
 					organize_imports_on_format = true,
 					enable_import_completion = true,
 					cmd = { "omnisharp" }
-				})
-			end,
-			["svelte"] = function()
-				-- configure svelte server
-				lspconfig["svelte"].setup({
-					capabilities = capabilities,
-					on_attach = function(client, bufnr)
-						vim.api.nvim_create_autocmd("BufWritePost", {
-							pattern = { "*.js", "*.ts" },
-							callback = function(ctx)
-								-- Here use ctx.match instead of ctx.file
-								client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-							end,
-						})
-					end,
-				})
-			end,
-			["graphql"] = function()
-				-- configure graphql language server
-				lspconfig["graphql"].setup({
-					capabilities = capabilities,
-					filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-				})
-			end,
-			["emmet_ls"] = function()
-				-- configure emmet language server
-				lspconfig["emmet_ls"].setup({
-					capabilities = capabilities,
-					filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 				})
 			end,
 			["lua_ls"] = function()
