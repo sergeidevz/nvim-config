@@ -31,6 +31,7 @@ km.set("n", "<leader>sh", "<C-w>s", {desc = "Split window horizontally"})
 km.set("n", "<leader>se", "<C-w>=", {desc = "Make splits equal size"})
 km.set("n", "<leader>sx", "<cmd>close<CR>", {desc = "Close current split"})
 
+
 -- Tabs
 km.set("n", "<leader>to", "<cmd>tabnew<CR>", {desc = "Open new tab"})
 km.set("n", "<leader>tx", "<cmd>tabclose<CR>", {desc = "Close current tab"})

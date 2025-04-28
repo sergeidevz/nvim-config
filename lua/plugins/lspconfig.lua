@@ -3,8 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		servers = {
-			omnisharp = {
-			},
 		},
 	},
 	dependencies = {
@@ -95,31 +93,9 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["angularls"] = function()
-        lspconfig["angularls"].setup{}
-			end,
-			["omnisharp"] = function()
-				-- configure svelte server
-				lspconfig["omnisharp"].setup({
-					capabilities = capabilities,
-					handlers = {
-						["textDocument/definition"] = require("omnisharp_extended").handler,
-					},
-					keys = {
-						{
-							"gd",
-							function()
-								require("omnisharp_extended").telescope_lsp_definitions()
-							end,
-							desc = "Goto Definition",
-						},
-					},
-					enable_roslyn_analyzers = true,
-					organize_imports_on_format = true,
-					enable_import_completion = true,
-					cmd = { "omnisharp" }
-				})
-			end,
+			--["angularls"] = function()
+        --lspconfig["angularls"].setup{}
+			--end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({

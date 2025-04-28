@@ -1,3 +1,3 @@
 return {
-	'joeveiga/ng.nvim'
+--	'joeveiga/ng.nvim'
 }
