@@ -29,7 +29,6 @@ return {
 				-- Buffer local mappings.
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local opts = { buffer = ev.buf, silent = true }
-				local hover_opts = { buffer = ev.buf, silent = true, width = 100 }
 
 				-- set keybinds
 				opts.desc = "Show LSP references"
@@ -93,9 +92,6 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			--["angularls"] = function()
-        --lspconfig["angularls"].setup{}
-			--end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({

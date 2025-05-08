@@ -26,7 +26,8 @@ return {
 			ensure_installed = {
 				"html",
 				"cssls",
-				"lua_ls"
+				"lua_ls",
+				"angularls"
 			},
 		})
 	end,
