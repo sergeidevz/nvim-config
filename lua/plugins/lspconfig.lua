@@ -3,12 +3,14 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		servers = {
+			omnisharp = {}
 		},
 	},
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim",                   opts = {} },
+		{ "Hoffs/omnisharp-extended-lsp.nvim" }
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -92,6 +94,28 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["omnisharp"] = function()
+				-- create a symlink to the omnisharp installed by mason
+				lspconfig["omnisharp"].setup({
+					capabilities = capabilities,
+					handlers = {
+						["textDocument/definition"] = require("omnisharp_extended").handler,
+					},
+					keys = {
+						{
+							"gd",
+							function()
+								require("omnisharp_extended").telescope_lsp_definitions()
+							end,
+							desc = "Goto Definition",
+						},
+					},
+					enable_roslyn_analyzers = true,
+					organize_imports_on_format = true,
+					enable_import_completion = true,
+					cmd = { "omnisharp" }
+				})
+			end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
@@ -109,6 +133,7 @@ return {
 					},
 				})
 			end,
+
 		})
 	end,
 }

@@ -36,7 +36,7 @@ return {
 				"angularls",
 				"gopls",
 				"clangd",
-				"omnisharp"
+				"omnisharp" -- create a symlink to the omnisharp installed by mason
 			}
 		})
 	end,
