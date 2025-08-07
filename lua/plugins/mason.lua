@@ -33,7 +33,7 @@ return {
 				"html",
 				"cssls",
 				"lua_ls",
-				"angularls",
+				"angularls", -- have @angular/language-server installed as a dev dependency
 				"gopls",
 				"clangd",
 				"omnisharp" -- create a symlink to the omnisharp installed by mason
