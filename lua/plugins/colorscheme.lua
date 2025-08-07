@@ -88,10 +88,10 @@ local A = {
     },
   },
 })
-		vim.cmd [[colorscheme astrolight]]
+		vim.cmd [[colorscheme astrodark]]
 	end
 }
 
 
 
-return A
+return M
