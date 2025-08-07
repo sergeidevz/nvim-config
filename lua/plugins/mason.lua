@@ -1,5 +1,11 @@
 return {
 	"williamboman/mason.nvim",
+	opts = {
+		ensure_installed = {
+			"stylua",
+			"csharpier"
+		}
+	},
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 	},
@@ -21,14 +27,17 @@ return {
 			},
 		})
 
+
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
 			ensure_installed = {
 				"html",
 				"cssls",
 				"lua_ls",
-				"angularls"
-			},
+				"angularls",
+				"gopls",
+				"clangd",
+				"omnisharp"
+			}
 		})
 	end,
 }
