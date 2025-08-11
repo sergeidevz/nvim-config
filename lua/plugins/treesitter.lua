@@ -34,7 +34,9 @@ return {
 				"query",
 				"vimdoc",
 				"c",
-				"c_sharp"
+				"c_sharp",
+				"php",
+				"php_only"
 			},
 			incremental_selection = {
 				enable = true,

@@ -21,6 +21,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "gofmt" },
+				php = { "php_cs_fixer" }
 			},
 		})
 

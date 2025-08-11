@@ -12,6 +12,7 @@ opt.swapfile = false
 opt.timeoutlen = 300
 opt.ttimeoutlen = 10
 opt.showmode = false
+opt.scrolloff = 999
 
 
 vim.diagnostic.config({

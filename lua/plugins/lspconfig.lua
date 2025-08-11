@@ -95,7 +95,6 @@ return {
 				})
 			end,
 			["omnisharp"] = function()
-				-- create a symlink to the omnisharp installed by mason
 				lspconfig["omnisharp"].setup({
 					capabilities = capabilities,
 					handlers = {
@@ -114,6 +113,11 @@ return {
 					organize_imports_on_format = true,
 					enable_import_completion = true,
 					cmd = { "omnisharp" }
+				})
+			end,
+			["intelephense"] = function()
+				lspconfig["intelephense"].setup({
+					lspconfig["intelephense"].setup({})
 				})
 			end,
 			["lua_ls"] = function()
