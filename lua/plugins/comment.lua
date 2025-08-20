@@ -3,7 +3,7 @@ return {
 	opts = {
 		-- add any options here
 	},
-	ft = { "cs", "ts", "js", "hs", "html", "php", "css" },
+	ft = { "cs", "ts", "js", "hs", "html", "php", "css", "lua", "blade" },
 	config = function()
 		require("Comment").setup({
 			padding = true,

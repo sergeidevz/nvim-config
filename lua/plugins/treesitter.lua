@@ -37,7 +37,8 @@ return {
 				"c",
 				"c_sharp",
 				"php",
-				"php_only"
+				"php_only",
+				"blade"
 			},
 			incremental_selection = {
 				enable = true,

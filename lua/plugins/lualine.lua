@@ -58,14 +58,14 @@ return {
 			sections = {
 				lualine_a = {"mode"},
 				lualine_b = {"diagnostics"},
-				lualine_c = {},
+				lualine_c = {"filetype", "filename"},
 				lualine_x = {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
-					{ "filename" },
+					{ "branch" },
 				},
 				lualine_y = {},
 				lualine_z = {},

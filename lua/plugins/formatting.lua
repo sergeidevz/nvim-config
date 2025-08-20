@@ -5,24 +5,25 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
+			log_level = vim.log.levels.DEBUG,
 			formatters_by_ft = {
 				javascript = { "prettier" },
 				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
+				-- javascriptreact = { "prettier" },
+				-- typescriptreact = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
 				-- yaml = { "prettier" },
 				markdown = { "prettier" },
-				graphql = { "prettier" },
-				liquid = { "prettier" },
+				-- graphql = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
-				go = { "gofmt" },
-				php = { "php_cs_fixer" }
+				-- python = { "isort", "black" },
+				-- go = { "gofmt" },
+				php = { "pint", "php_cs_fixer" },
+				blade = { "blade-formatter" } -- Install with npm
 			},
+
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
