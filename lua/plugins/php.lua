@@ -1,5 +1,5 @@
 return {
-	"adalessa/laravel.nvim",
+	{"adalessa/laravel.nvim", ft = {"blade", "php"}},
 	{
     "ricardoramirezr/blade-nav.nvim",
     dependencies = {

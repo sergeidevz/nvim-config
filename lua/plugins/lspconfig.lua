@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile" },
+	event = { "BufReadPre" },
 	opts = {
 		servers = {
 			omnisharp = {}
@@ -8,9 +8,9 @@ return {
 	},
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		{ "antosha417/nvim-lsp-file-operations", config = true },
+		{ "antosha417/nvim-lsp-file-operations", config = true, event = "BufReadPre" },
 		{ "folke/neodev.nvim",                   opts = {} },
-		{ "Hoffs/omnisharp-extended-lsp.nvim" }
+		{ "Hoffs/omnisharp-extended-lsp.nvim",   ft = "cs" }
 	},
 	config = function()
 		-- import lspconfig plugin

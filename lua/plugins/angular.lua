@@ -1,3 +1,4 @@
 return {
-	'joeveiga/ng.nvim'
+	'joeveiga/ng.nvim',
+	ft = {"html", "ts"}
 }

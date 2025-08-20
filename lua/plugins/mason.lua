@@ -1,5 +1,6 @@
 return {
 	"williamboman/mason.nvim",
+	event = "VeryLazy",
 	opts = {
 		ensure_installed = {
 			"stylua",
@@ -7,7 +8,7 @@ return {
 		}
 	},
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		{ "williamboman/mason-lspconfig.nvim" },
 	},
 	config = function()
 		-- import mason
