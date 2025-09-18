@@ -38,7 +38,9 @@ return {
 				"gopls",
 				"clangd",
 				"omnisharp", -- create a symlink to the omnisharp installed by mason
-				"intelephense"
+				"intelephense",
+				"emmet_ls",
+				"volar",
 			}
 		})
 	end,

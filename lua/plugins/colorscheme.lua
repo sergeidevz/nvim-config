@@ -1,6 +1,5 @@
 local K = {
 	"askfiy/visual_studio_code",
-	event = "VeryLazy",
 	priority = 100,
 	config = function()
 		vim.cmd("colorscheme visual_studio_code")
@@ -9,7 +8,6 @@ local K = {
 
 local M = {
 	"folke/tokyonight.nvim",
-	event = "VeryLazy",
 	priority = 1000,
 	opts = {
 

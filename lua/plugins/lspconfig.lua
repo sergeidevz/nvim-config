@@ -61,10 +61,14 @@ return {
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
 				opts.desc = "Go to previous diagnostic"
-				keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+				keymap.set("n", "[d", function()
+					vim.diagnostic.jump({ float = true, count = 1 })
+				end, opts)
 
 				opts.desc = "Go to next diagnostic"
-				keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+				keymap.set("n", "]d", function()
+					vim.diagnostic.jump({ float = true, count = -1 })
+				end, opts)
 
 				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", function()
@@ -117,7 +121,14 @@ return {
 			end,
 			["intelephense"] = function()
 				lspconfig["intelephense"].setup({
-					lspconfig["intelephense"].setup({})
+					lspconfig["intelephense"].setup({
+						filetypes = { "php", "blade" }
+					})
+				})
+			end,
+			["emmet_ls"] = function()
+				lspconfig["emmet_ls"].setup({
+					filetypes = { "blade", "html", "css", "javascript", "typescript" }
 				})
 			end,
 			["lua_ls"] = function()

@@ -12,7 +12,7 @@ return {
 				-- javascriptreact = { "prettier" },
 				-- typescriptreact = { "prettier" },
 				css = { "prettier" },
-				html = { "prettier" },
+				html = { "prettierd" },
 				json = { "prettier" },
 				-- yaml = { "prettier" },
 				markdown = { "prettier" },
@@ -21,7 +21,7 @@ return {
 				-- python = { "isort", "black" },
 				-- go = { "gofmt" },
 				php = { "pint", "php_cs_fixer" },
-				blade = { "blade-formatter" } -- Install with npm
+				blade = { "blade-formatter" }, -- Install with npm
 			},
 
 		})
