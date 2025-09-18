@@ -18,7 +18,7 @@ return {
 				markdown = { "prettier" },
 				-- graphql = { "prettier" },
 				lua = { "stylua" },
-				-- python = { "isort", "black" },
+				python = { "black" },
 				-- go = { "gofmt" },
 				php = { "pint", "php_cs_fixer" },
 				blade = { "blade-formatter" }, -- Install with npm

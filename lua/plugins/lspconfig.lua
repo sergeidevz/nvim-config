@@ -131,6 +131,10 @@ return {
 					filetypes = { "blade", "html", "css", "javascript", "typescript" }
 				})
 			end,
+			["basedpyright"] = function()
+				lspconfig["basedpyright"].setup({
+				})
+	    end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({

@@ -41,6 +41,7 @@ return {
 				"intelephense",
 				"emmet_ls",
 				"volar",
+				"basedpyright"
 			}
 		})
 	end,
