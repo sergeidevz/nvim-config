@@ -41,3 +41,5 @@ km.set("n", "<leader>ba", function()
 		end
 	end
 end, { desc = "Delete all buffers but current one" })
+
+

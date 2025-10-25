@@ -1,5 +1,5 @@
 return {
 	'mrcjkb/haskell-tools.nvim',
-	version = '^4', -- Recommended
-	ft = { "hs", "cabal", "haskell" }
+	version = '^6', -- Recommended
+	lazy = false
 }

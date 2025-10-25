@@ -19,6 +19,7 @@ return {
 
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
+		local ht = require('haskell-tools')
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -31,6 +32,26 @@ return {
 				-- Buffer local mappings.
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local opts = { buffer = ev.buf, silent = true }
+
+				-- haskell-language-server relies heavily on codeLenses,
+				-- so auto-refresh (see advanced configuration) is enabled by default
+				opts.desc = "Code lens"
+				keymap.set('n', '<space>cl', vim.lsp.codelens.run, opts)
+				-- Hoogle search for the type signature of the definition under the cursor
+				opts.desc = "Hoogle signature"
+				keymap.set('n', '<space>hs', ht.hoogle.hoogle_signature, opts)
+				-- Evaluate all code snippets
+				opts.desc = "Eval all"
+				keymap.set('n', '<space>hea', ht.lsp.buf_eval_all, opts)
+				-- Toggle a GHCi repl for the current package
+				opts.desc = "Toggle ghci repl for current PACKAGE"
+				keymap.set('n', '<leader>htp', ht.repl.toggle, opts)
+				-- Toggle a GHCi repl for the current buffer
+				opts.desc = "Toggle ghci repl for current BUFFER"
+				keymap.set('n', '<leader>htb', function()
+					ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+				end, opts)
+				keymap.set('n', '<leader>hq', ht.repl.quit, opts)
 
 				-- set keybinds
 				opts.desc = "Show LSP references"
@@ -91,11 +112,33 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		local mason_registry = require("mason-registry")
+		local vue_server = mason_registry.get_package("vue-language-server"):get_install_path() ..
+				"/node_modules/@vue/language-server"
+
+
+
+
 		mason_lspconfig.setup_handlers({
 			-- default handler for installed servers
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
+				})
+			end,
+			["ts_ls"] = function()
+				lspconfig["ts_ls"].setup({
+					capabilities = capabilities,
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = vue_server,
+								languages = { "vue" }
+							}
+						}
+					},
+					languages = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 				})
 			end,
 			["omnisharp"] = function()
@@ -133,8 +176,9 @@ return {
 			end,
 			["basedpyright"] = function()
 				lspconfig["basedpyright"].setup({
+					capabilities = capabilities
 				})
-	    end,
+			end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
