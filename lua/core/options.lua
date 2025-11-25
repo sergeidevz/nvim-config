@@ -16,5 +16,5 @@ opt.scrolloff = 999
 
 
 vim.diagnostic.config({
-	virtual_text = false, -- Disable inline diagnostics
+	virtual_text = true, -- Disable inline diagnostics
 })

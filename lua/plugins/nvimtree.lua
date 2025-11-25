@@ -62,7 +62,7 @@ return {
 				show_on_open_dirs = false,
 				debounce_delay = 50,
 				severity = {
-					min = vim.diagnostic.severity.WARNING,
+					min = vim.diagnostic.severity.INFO,
 					max = vim.diagnostic.severity.ERROR,
 				},
 				icons = {
@@ -73,10 +73,10 @@ return {
 				},
 			},
 			filters = {
-				custom = { ".DS_Store", "node_modules", ".idea", ".git" },
+				custom = { ".DS_Store", "node_modules", ".idea", ".git", "vendor" },
 			},
 			git = {
-				ignore = false,
+				ignored = false
 			},
 		})
 	end,

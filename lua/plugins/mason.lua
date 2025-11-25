@@ -14,6 +14,13 @@ return {
 		-- import mason
 		local mason = require("mason")
 
+		mason.setup({
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
+		})
+
 		-- import mason-lspconfig
 		local mason_lspconfig = require("mason-lspconfig")
 
@@ -34,6 +41,7 @@ return {
 				"html",
 				"cssls",
 				"lua_ls",
+				"ts_ls",
 				"angularls", -- have @angular/language-server installed as a dev dependency
 				"gopls",
 				"clangd",
@@ -41,7 +49,7 @@ return {
 				"intelephense",
 				"emmet_ls",
 				"volar",
-				"basedpyright"
+				-- "basedpyright"
 			}
 		})
 	end,

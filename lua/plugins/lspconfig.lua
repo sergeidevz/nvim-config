@@ -53,9 +53,13 @@ return {
 				end, opts)
 				keymap.set('n', '<leader>hq', ht.repl.quit, opts)
 
+
 				-- set keybinds
 				opts.desc = "Show LSP references"
 				keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+
+				opts.desc = "Show signature help"
+				keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
 
 				opts.desc = "Go to declaration"
 				keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
@@ -117,8 +121,6 @@ return {
 				"/node_modules/@vue/language-server"
 
 
-
-
 		mason_lspconfig.setup_handlers({
 			-- default handler for installed servers
 			function(server_name)
@@ -129,39 +131,39 @@ return {
 			["ts_ls"] = function()
 				lspconfig["ts_ls"].setup({
 					capabilities = capabilities,
-					init_options = {
-						plugins = {
-							{
-								name = "@vue/typescript-plugin",
-								location = vue_server,
-								languages = { "vue" }
-							}
-						}
-					},
+					-- init_options = {
+					-- plugins = {
+					-- 	{
+					-- 		name = "@vue/typescript-plugin",
+					-- 		location = vue_server,
+					-- 		languages = { "vue" }
+					-- 	}
+					-- }
+					-- },
 					languages = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 				})
 			end,
-			["omnisharp"] = function()
-				lspconfig["omnisharp"].setup({
-					capabilities = capabilities,
-					handlers = {
-						["textDocument/definition"] = require("omnisharp_extended").handler,
-					},
-					keys = {
-						{
-							"gd",
-							function()
-								require("omnisharp_extended").telescope_lsp_definitions()
-							end,
-							desc = "Goto Definition",
-						},
-					},
-					enable_roslyn_analyzers = true,
-					organize_imports_on_format = true,
-					enable_import_completion = true,
-					cmd = { "omnisharp" }
-				})
-			end,
+			-- ["omnisharp"] = function()
+			-- 	lspconfig["omnisharp"].setup({
+			-- 		capabilities = capabilities,
+			-- 		handlers = {
+			-- 			["textDocument/definition"] = require("omnisharp_extended").handler,
+			-- 		},
+			-- 		keys = {
+			-- 			{
+			-- 				"gd",
+			-- 				function()
+			-- 					require("omnisharp_extended").telescope_lsp_definitions()
+			-- 				end,
+			-- 				desc = "Goto Definition",
+			-- 			},
+			-- 		},
+			-- 		enable_roslyn_analyzers = true,
+			-- 		organize_imports_on_format = true,
+			-- 		enable_import_completion = true,
+			-- 		cmd = { "OmniSharp" }
+			-- 	})
+			-- end,
 			["intelephense"] = function()
 				lspconfig["intelephense"].setup({
 					lspconfig["intelephense"].setup({
