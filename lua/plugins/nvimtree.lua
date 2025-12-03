@@ -76,7 +76,7 @@ return {
 				custom = { ".DS_Store", "node_modules", ".idea", ".git", "vendor" },
 			},
 			git = {
-				ignored = false
+				ignore = false
 			},
 		})
 	end,

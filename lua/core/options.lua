@@ -2,6 +2,8 @@ local opt = vim.opt
 opt.number = true
 opt.shiftwidth = 2
 opt.tabstop = 2
+opt.expandtab = true
+opt.softtabstop = 2
 opt.relativenumber = true
 opt.ignorecase = true
 opt.smartcase = true
@@ -16,5 +18,5 @@ opt.scrolloff = 999
 
 
 vim.diagnostic.config({
-	virtual_text = true, -- Disable inline diagnostics
+	virtual_text = false, -- Disable inline diagnostics
 })
