@@ -38,7 +38,7 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"html",
+	 			"html",
 				"cssls",
 				"lua_ls",
 				"ts_ls",
@@ -48,7 +48,6 @@ return {
 				"omnisharp", -- create a symlink to the omnisharp installed by mason
 				"intelephense",
 				"emmet_ls",
-				"volar",
 				-- "basedpyright"
 			}
 		})

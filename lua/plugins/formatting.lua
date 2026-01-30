@@ -20,7 +20,8 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 				-- go = { "gofmt" },
-				php = { "pint", "php_cs_fixer" },
+				php = { "php_cs_fixer" },
+				twig = { "prettier" },
 				blade = { "blade-formatter" }, -- Install with npm
 			},
 

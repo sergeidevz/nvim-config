@@ -15,6 +15,7 @@ opt.timeoutlen = 300
 opt.ttimeoutlen = 10
 opt.showmode = false
 opt.scrolloff = 999
+opt.linebreak = true
 
 
 vim.diagnostic.config({
