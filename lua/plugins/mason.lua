@@ -14,13 +14,6 @@ return {
 		-- import mason
 		local mason = require("mason")
 
-		mason.setup({
-			registries = {
-				"github:mason-org/mason-registry",
-				"github:Crashdummyy/mason-registry",
-			},
-		})
-
 		-- import mason-lspconfig
 		local mason_lspconfig = require("mason-lspconfig")
 
