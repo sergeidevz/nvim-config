@@ -106,11 +106,11 @@ return {
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
+    -- local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    -- for type, icon in pairs(signs) do
+    --   local hl = "DiagnosticSign" .. type
+    --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    -- end
 
     local util = require("lspconfig.util")
 
@@ -130,25 +130,23 @@ return {
           },
         },
       },
-
-      on_attach = function(client)
-        -- Twiggy should not format
-        client.server_capabilities.documentFormattingProvider = false
-      end,
     }
+
+
     lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       languages = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
     })
 
-    -- lspconfig["angularls"].setup({
-    --   capabilities = capabilities,
-    --   cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
-    --   root_dir = require("lspconfig.util").root_pattern("angular.json"),
-    -- })
-    lspconfig["intelephense"].setup({
-      filetypes = { "php", "blade", "twig" }
+    lspconfig["angularls"].setup({
+      capabilities = capabilities,
+      cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
+      root_dir = require("lspconfig.util").root_pattern("angular.json"),
     })
+
+    -- lspconfig["intelephense"].setup({
+    --   filetypes = { "php", "blade", "twig" }
+    -- })
     lspconfig["emmet_ls"].setup({
       filetypes = { "blade", "html", "css", "javascript", "typescript" }
     })
