@@ -138,18 +138,18 @@ return {
       languages = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
     })
 
-    lspconfig["angularls"].setup({
-      capabilities = capabilities,
-      cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
-      root_dir = require("lspconfig.util").root_pattern("angular.json"),
-    })
+    -- lspconfig["angularls"].setup({
+    --   capabilities = capabilities,
+    --   cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
+    --   root_dir = require("lspconfig.util").root_pattern("angular.json"),
+    -- })
 
     -- lspconfig["intelephense"].setup({
     --   filetypes = { "php", "blade", "twig" }
     -- })
-    lspconfig["emmet_ls"].setup({
-      filetypes = { "blade", "html", "css", "javascript", "typescript" }
-    })
+    -- lspconfig["emmet_ls"].setup({
+    --   filetypes = { "blade", "html", "css", "javascript", "typescript" }
+    -- })
     lspconfig["basedpyright"].setup({
       capabilities = capabilities
     })

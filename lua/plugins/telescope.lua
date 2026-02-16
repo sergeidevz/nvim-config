@@ -42,7 +42,7 @@ return {
 		-- set keymaps
 		local km = vim.keymap -- for conciseness
 
-		km.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true, desc = "Find files" })
+		km.set('n', '<leader>ff', '<cmd>Telescope find_files find_command=rg,--hidden,--files<CR>', { noremap = true, silent = true, desc = "Find files" })
 		km.set('n', '<leader>fw', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true, desc = "Live grep" })
 		km.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true, desc = "Buffers" })
 		km.set('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true, desc = "Tags" })
