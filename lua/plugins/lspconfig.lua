@@ -1,16 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre" },
-  opts = {
-    servers = {
-      omnisharp = {}
-    },
-  },
+  opts = {},
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true, event = "BufReadPre" },
     { "folke/neodev.nvim",                   opts = {} },
-    { "Hoffs/omnisharp-extended-lsp.nvim",   ft = "cs" }
   },
   config = function()
     -- import lspconfig plugin
@@ -133,10 +128,10 @@ return {
     }
 
 
-    lspconfig["ts_ls"].setup({
-      capabilities = capabilities,
-      languages = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
-    })
+    -- lspconfig["ts_ls"].setup({
+    --   capabilities = capabilities,
+    --   languages = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+    -- })
 
     -- lspconfig["angularls"].setup({
     --   capabilities = capabilities,
@@ -150,23 +145,23 @@ return {
     -- lspconfig["emmet_ls"].setup({
     --   filetypes = { "blade", "html", "css", "javascript", "typescript" }
     -- })
-    lspconfig["basedpyright"].setup({
-      capabilities = capabilities
-    })
+    -- lspconfig["basedpyright"].setup({
+    --   capabilities = capabilities
+    -- })
     -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          -- make the language server recognize "vim" global
-          diagnostics = {
-            globals = { "vim" },
-          },
-          completion = {
-            callSnippet = "Replace",
-          },
-        },
-      },
-    })
+    -- lspconfig["lua_ls"].setup({
+    --   capabilities = capabilities,
+    --   settings = {
+    --     Lua = {
+    --       -- make the language server recognize "vim" global
+    --       diagnostics = {
+    --         globals = { "vim" },
+    --       },
+    --       completion = {
+    --         callSnippet = "Replace",
+    --       },
+    --     },
+    --   },
+    -- })
   end,
 }
